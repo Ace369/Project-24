@@ -24,8 +24,8 @@ function setup() {
 	paper = new Paper(200, 450, 40);
 
 	bin1 = new Bin(1100, 680, 150, 20);
-	bin2 = new Bin(1185, 615, 20, 150);
-	bin3 = new Bin(1035, 615, 20, 150);
+	bin2 = new Bin(1045, 615, 20, 150);
+	bin3 = new Bin(1155, 615, 20, 150);
 
 	ground = new Ground(60);
 
@@ -37,6 +37,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
+  Engine.update(engine);
   
 	paper.display();
 	bin1.display();
@@ -54,7 +55,7 @@ function keyPresed() {
 	if (keyCode == UP_ARROW) {
 
 		// I couldn't figure out the correct amount of force
-		Matter.Body.applyForce(paper.body, paper.body.position, {x:85, y: -85});
+		Matter.Body.applyForce(paper.body, paper.body.position, {x:2, y: -2});
 	}
 }
 

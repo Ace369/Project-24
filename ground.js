@@ -8,7 +8,7 @@ class Ground {
 
         }
 
-        this.body = Bodies.rectangle(200, 680, 1700, height, options);
+        this.body = Bodies.rectangle(800, 680, 1700, height, options);
         this.width = width;
         this.height = height;
 
