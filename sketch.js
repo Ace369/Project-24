@@ -27,7 +27,7 @@ function setup() {
 	bin2 = new Bin(1045, 615, 20, 150);
 	bin3 = new Bin(1155, 615, 20, 150);
 
-	ground = new Ground(60);
+	ground = new Ground(20);
 
 	Engine.run(engine);
   
@@ -37,7 +37,7 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  Engine.update(engine);
+ Engine.update(engine);
   
 	paper.display();
 	bin1.display();
@@ -45,17 +45,12 @@ function draw() {
 	bin3.display();
 	ground.display();
 
-	keyPresed();
-  drawSprites();
- 
 }
+function keyPressed() {
+	if (keyCode === UP_ARROW) {
 
-function keyPresed() {
-
-	if (keyCode == UP_ARROW) {
-
-		// I couldn't figure out the correct amount of force
-		Matter.Body.applyForce(paper.body, paper.body.position, {x:2, y: -2});
+	  Matter.Body.applyForce(paper.body,paper.body.position,{x:85,y:-85});
+  
 	}
 }
 
